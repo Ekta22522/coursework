@@ -1,0 +1,57 @@
+*{
+    marging:0px;
+    padding: 0px;
+}
+
+
+.watch{
+  width:20%;
+    background-color: grey;
+    border-radius: 5px;
+    margin: 40px;
+ b
+}
+.image img{
+    width:100%;
+    border-top-left-radius: 5px;
+    border-top-left-radius: 5px;
+    
+    
+}
+
+.title{
+    text-align: center;
+}
+.des{
+    text-align: center;
+    
+}
+
+/* button for all titian watch */
+
+button{
+    margin-top: 5px;
+    margin-bottom: 20px;
+ background-color: white;
+ border: 1px solid black;
+ padding: 5px;
+border-radius: 5px;
+
+}
+button:hover{
+    background-color: black;
+    color: white;
+    transition: .4s;
+}
+
+* {
+    box-sizing: border-box;
+  }
+
+.container{
+    display: flex;
+    
+}
+
+
+    
