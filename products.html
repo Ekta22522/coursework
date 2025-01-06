@@ -44,7 +44,8 @@
 
         .hero {
             height: 400px;
-            background: #f5f0eb;
+            background-image: url("titian watch image/hero.jpeg");
+            /*background: #f5f0eb;*/
             padding: 4rem 5%;
             position: relative;
             overflow: hidden;
@@ -52,25 +53,13 @@
 
         .hero h1 {
             font-size: 3rem;
-            color: #333;
+            color: #ff4d8c;;
             margin-bottom: 1rem;
         }
 
         .hero p {
-            color: #666;
+            color: #ff4d8c;;
             max-width: 400px;
-        }
-
-        .cream-splash {
-            position: absolute;
-            right: 10%;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 300px;
-            height: 200px;
-            background: white;
-            border-radius: 50%;
-            transform: rotate(-45deg);
         }
 
         .filters {
@@ -227,37 +216,146 @@
     </style>
 </head>
 <body>
-    <header class="header">
-        <a href="#" class="logo">LCnature</a>
-        <nav class="nav-links">
-            <a href="#">Shop</a>
-            <a href="#">Offers</a>
-            <a href="#">Our story</a>
-            <a href="#">Blog</a>
-        </nav>
-        <div class="cart-section">
-            <input type="search" placeholder="Search products..." />
-            <a href="#">Cart (0)</a>
-        </div>
-    </header>
+<!--navigation bar-->
+<!--    <header class="header">-->
+<!--        <a href="#" class="logo">LCnature</a>-->
+<!--        <nav class="nav-links">-->
+<!--            <a href="#">Shop</a>-->
+<!--            <a href="#">Offers</a>-->
+<!--            <a href="#">Our story</a>-->
+<!--            <a href="#">Blog</a>-->
+<!--        </nav>-->
+<!--        <div class="cart-section">-->
+<!--            <input type="search" placeholder="Search products..." />-->
+<!--            <a href="#">Cart (0)</a>-->
+<!--        </div>-->
+<!--    </header>-->
 
+<!--  banner  -->
     <section class="hero">
         <h1>Gift for your skin</h1>
         <p>Aliquip fugiat ipsum nostrud ex et eu incididunt quis minim dolore excepteur voluptate</p>
-        <div class="cream-splash"></div>
     </section>
 
+
+
+<!--filters section-->
     <div class="filters">
         <button class="filter-btn active">All Products</button>
-        <button class="filter-btn">Face</button>
-        <button class="filter-btn">Body</button>
-        <input type="search" placeholder="Search product..." />
-        <select>
-            <option>Sort by</option>
-        </select>
+        <button class="filter-btn">Men</button>
+        <button class="filter-btn">Women</button>
+        <label class="search-bar">
+            <input type="search" placeholder="Search product..." />
+        </label>
+        <label>
+            <select>
+                <option>Sort by</option>
+            </select>
+        </label>
     </div>
 
+
+<!--product grid-->
     <div class="products-grid">
+
+        <div class="product-card">
+            <span class="badge">Best seller</span>
+            <img src="/api/placeholder/250/200" alt="Product" class="product-image" />
+            <h3>Product title</h3>
+            <p>Item in adipisicin</p>
+            <div class="price">
+                <span class="current-price">$32</span>
+                <span class="original-price">$42</span>
+                <button class="cart-btn">+</button>
+            </div>
+        </div>
+
+
+        <div class="product-card">
+            <span class="badge">Best seller</span>
+            <img src="/api/placeholder/250/200" alt="Product" class="product-image" />
+            <h3>Product title</h3>
+            <p>Item in adipisicin</p>
+            <div class="price">
+                <span class="current-price">$32</span>
+                <span class="original-price">$42</span>
+                <button class="cart-btn">+</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <span class="badge">Best seller</span>
+            <img src="/api/placeholder/250/200" alt="Product" class="product-image" />
+            <h3>Product title</h3>
+            <p>Item in adipisicin</p>
+            <div class="price">
+                <span class="current-price">$32</span>
+                <span class="original-price">$42</span>
+                <button class="cart-btn">+</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <span class="badge">Best seller</span>
+            <img src="/api/placeholder/250/200" alt="Product" class="product-image" />
+            <h3>Product title</h3>
+            <p>Item in adipisicin</p>
+            <div class="price">
+                <span class="current-price">$32</span>
+                <span class="original-price">$42</span>
+                <button class="cart-btn">+</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <span class="badge">Best seller</span>
+            <img src="/api/placeholder/250/200" alt="Product" class="product-image" />
+            <h3>Product title</h3>
+            <p>Item in adipisicin</p>
+            <div class="price">
+                <span class="current-price">$32</span>
+                <span class="original-price">$42</span>
+                <button class="cart-btn">+</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <span class="badge">Best seller</span>
+            <img src="/api/placeholder/250/200" alt="Product" class="product-image" />
+            <h3>Product title</h3>
+            <p>Item in adipisicin</p>
+            <div class="price">
+                <span class="current-price">$32</span>
+                <span class="original-price">$42</span>
+                <button class="cart-btn">+</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <span class="badge">Best seller</span>
+            <img src="/api/placeholder/250/200" alt="Product" class="product-image" />
+            <h3>Product title</h3>
+            <p>Item in adipisicin</p>
+            <div class="price">
+                <span class="current-price">$32</span>
+                <span class="original-price">$42</span>
+                <button class="cart-btn">+</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <span class="badge">Best seller</span>
+            <img src="/api/placeholder/250/200" alt="Product" class="product-image" />
+            <h3>Product title</h3>
+            <p>Item in adipisicin</p>
+            <div class="price">
+                <span class="current-price">$32</span>
+                <span class="original-price">$42</span>
+                <button class="cart-btn">+</button>
+            </div>
+        </div>
+
+
         <div class="product-card">
             <span class="badge">Best seller</span>
             <img src="/api/placeholder/250/200" alt="Product" class="product-image" />
@@ -272,6 +370,9 @@
         <!-- Repeat product-card div for other products -->
     </div>
 
+
+
+<!--pagination-->
     <div class="pagination">
         <button class="page-btn">←</button>
         <button class="page-btn active">1</button>
@@ -281,41 +382,45 @@
         <button class="page-btn">→</button>
     </div>
 
-    <footer class="footer">
-        <div class="footer-grid">
-            <div>
-                <h3>About</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Shop</a></li>
-                    <li><a href="#">Our story</a></li>
-                    <li><a href="#">Blogs</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3>Help</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Shipping & Returns</a></li>
-                    <li><a href="#">Track Order</a></li>
-                    <li><a href="#">FAQs</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3>Contact</h3>
-                <ul class="footer-links">
-                    <li>Phone: (+1) 123 456 7893</li>
-                    <li>Email: name@email.com</li>
-                </ul>
-            </div>
-            <div>
-                <h3>Receive new promotions</h3>
-                <p>Duis ea tempor commodo amet reprehende</p>
-                <div class="newsletter">
-                    <input type="email" placeholder="Input your email" />
-                    <button>Subscribe</button>
-                </div>
-            </div>
-        </div>
-    </footer>
+
+
+
+<!--footer-->
+<!--    <footer class="footer">-->
+<!--        <div class="footer-grid">-->
+<!--            <div>-->
+<!--                <h3>About</h3>-->
+<!--                <ul class="footer-links">-->
+<!--                    <li><a href="#">Home</a></li>-->
+<!--                    <li><a href="#">Shop</a></li>-->
+<!--                    <li><a href="#">Our story</a></li>-->
+<!--                    <li><a href="#">Blogs</a></li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <h3>Help</h3>-->
+<!--                <ul class="footer-links">-->
+<!--                    <li><a href="#">Shipping & Returns</a></li>-->
+<!--                    <li><a href="#">Track Order</a></li>-->
+<!--                    <li><a href="#">FAQs</a></li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <h3>Contact</h3>-->
+<!--                <ul class="footer-links">-->
+<!--                    <li>Phone: (+1) 123 456 7893</li>-->
+<!--                    <li>Email: name@email.com</li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <h3>Receive new promotions</h3>-->
+<!--                <p>Duis ea tempor commodo amet reprehende</p>-->
+<!--                <div class="newsletter">-->
+<!--                    <input type="email" placeholder="Input your email" />-->
+<!--                    <button>Subscribe</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </footer>-->
 </body>
 </html>
