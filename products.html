@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Watch collection</title>
     <link rel="stylesheet" href="product.css">
+
 </head>
 <body>
     <!-- header -->
@@ -21,11 +22,11 @@
 <!--filters section-->
     <div class="filters">
         <button class="filter-btn active">All Products</button>
-        <button class="filter-btn"><a href="men.html">Men</a></button>
-        <button class="filter-btn"><a href="women.html">Women</a></button>
-        <button class="filter-btn"><a href="Kids.html">Kids</a></button>
-        <button class="filter-btn"><a href="luxury.html">Luxury</a></button>
-        <button class="filter-btn"><a href="smartwatch.html">Smartwatch</a></button>
+        <button class="filter-btn" id="filter_btn" value="men">Men</button>
+        <button class="filter-btn">Women</button>
+        <button class="filter-btn">Kids</button>
+        <button class="filter-btn">Luxury</button>
+        <button class="filter-btn">Smartwatch</button>
         <label class="search-bar">
             <input type="search" placeholder="Search product..."  />
             <img src="search icon.png" alt="Search Icon" class="search-icon">
@@ -37,171 +38,18 @@
                 <option>price low to high</option>
                 <option>price high to low</option>
                 <option>Best Match</option>
-               
             </select>
         </label>
     </div>
 
 
 <!--product grid-->
-    <div class="products-grid">
-
-        <div class="product-card">
-            <span class="badge">Best seller</span>
-            <img src="titian watch image/watch1.webp" alt="Product" class="product-image" />
-            <h3>Titan Quartz Analog White Dial Metal Strap Watch for Women</h3>
-            <p>Item in adipisicin</p>
-            <div class="price">
-                <span class="current-price">$320</span>
-                <span class="original-price">$400</span>
-               <button class="cart"><img src="cart.png"></button>
-             
-                
-            </div>
-        </div>
+    <div class="products-grid" id="products_grid">
 
 
-        <div class="product-card">
-            <span class="badge">Best seller</span>
-            <img src="omega.avif" alt="Product" class="product-image" />
-            <h3>
-                Seamaster 300 41 mm, steel on leather strap
-            </h3>
-                <p>
-                    Item in adipisicin
-                </p>
-            
-            <div class="price">
-                <span class="current-price">$8550</span>
-                <span class="original-price">$9000</span>
-                <button class="cart"><img src="cart.png"></button>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <span class="badge">Best seller</span>
-            <img src="titian watch image/watch3.webp" alt="Product" class="product-image" />
-            <h3>Titan Workwear White Dial Analog with Day and Date Stainless Steel Strap watch </h3>
-            <p>Item in adipisicin</p>
-            <div class="price">
-                <span class="current-price">$500</span>
-                <span class="original-price">$590</span>
-                <button class="cart"><img src="cart.png"></button>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <span class="badge">Best seller</span>
-            <img src="titian watch image/watch4.webp" alt="Product" class="product-image" />
-            <h3>Titan Quartz Analog Anthracite Dial Leather Strap Watch</h3>
-            <p>Item in adipisicin</p>
-            <div class="price">
-                <span class="current-price">$750</span>
-                <span class="original-price">$800</span>
-                <button class="cart"><img src="cart.png"></button>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <span class="badge">Best seller</span>
-            <img src="titian watch image/watch5.webp" alt="Product" class="product-image" />
-            <h3>Titan Minimals White Dial Analog Metal Strap watch</h3>
-            <p>Item in adipisicin</p>
-            <div class="price">
-                <span class="current-price">$560</span>
-                <span class="original-price">$620</span>
-                <button class="cart"><img src="cart.png"></button>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <span class="badge">Best seller</span>
-            <img src="rolex0.avif" alt="Product" class="product-image" />
-            <h3>Oyster, 36 mm, Everose gold and diamonds</h3>
-            <p>Item in adipisicin</p>
-            <div class="price">
-                <span class="current-price">$750</span>
-                <span class="original-price">$800</span>
-                <button class="cart"><img src="cart.png"></button>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <span class="badge">Best seller</span>
-            <img src="omega blue.avif" alt="Product" class="product-image" />
-            <h3>Seamaster 300 41 mm, steel on steel
-                </h3>
-            <p>Item in adipisicin</p>
-            <div class="price">
-                <span class="current-price">$320</span>
-                <span class="original-price">$400</span>
-                <button class="cart"><img src="cart.png"></button>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <span class="badge">Best seller</span>
-            <img src="casio.avif" alt="Product" class="product-image" />
-            <h3>AMW-870A-3AV</h3>
-            <p>Item in adipisicin</p>
-            <div class="price">
-                <span class="current-price">$640</span>
-                <span class="original-price">$690</span>
-                <button class="cart"><img src="cart.png"></button>
-            </div>
-        </div>
 
 
-        <div class="product-card">
-            <span class="badge">Best seller</span>
-            <img src="titian watch image/watch9.webp" alt="Product" class="product-image" />
-            <h3>Titan Quartz Analog with Date Champagne Dial Leather Strap Watch for Men</h3>
-            <p>Item in adipisicin</p>
-            <div class="price">
-                <span class="current-price">$580</span>
-                <span class="original-price">$650</span>
-                <button class="cart"><img src="cart.png"></button>
-            </div>
-        </div>
 
-
-        <div class="product-card">
-            <span class="badge">Best seller</span>
-            <img src="titian watch image/watch10.webp" alt="Product" class="product-image" />
-            <h3>Titan Quartz Analog with Date Champagne Dial stainless Steel Strap Watch for women</h3>
-            <p>Item in adipisicin</p>
-            <div class="price">
-                <span class="current-price">$760</span>
-                <span class="original-price">$800</span>
-                <button class="cart"><img src="cart.png"></button>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <span class="badge">Best seller</span>
-            <img src="rolex.avif" alt="Product" class="product-image" />
-            <h3> Oystersteel with a Cerachrom bezel insert in black ceramic and a black dial </h3>
-            <p>Item in adipisicin</p>
-            <div class="price">
-                <span class="current-price">$13000</span>
-                <span class="original-price">$15000</span>
-                <button class="cart"><img src="cart.png"></button>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <span class="badge">Best seller</span>
-            <img src="rolex 2.avif" alt="Product" class="product-image" />
-            <h3>Oyster, 36 mm, Everose gold and diamonds</h3>
-            <p>Item in adipisicin</p>
-            <div class="price">
-                <span class="current-price">$17500</span>
-                <span class="original-price">$18000</span>
-                <button class="cart"><img src="cart.png"></button>
-            </div>
-        </div>
-
- <!-- Repeat product-card div for other products -->
     </div>
 
 
@@ -217,198 +65,13 @@
     </div>
 
 
+
+
 <!-- footer -->
 
 
-<!-- Men collection -->
-<div class="product-card">
-    <span class="badge">Best seller</span>
-    <img src="rolex 2.avif" alt="Product" class="product-image" />
-    <h3>Oyster, 36 mm, Everose gold and diamonds</h3>
-    <p>Item in adipisicin</p>
-    <div class="price">
-        <span class="current-price">$17500</span>
-        <span class="original-price">$18000</span>
-        <button class="cart"><img src="cart.png"></button>
-    </div>
-</div>
 
 
-<div class="product-card">
-    <span class="badge">Best seller</span>
-    <img src="rolex 2.avif" alt="Product" class="product-image" />
-    <h3>Oyster, 36 mm, Everose gold and diamonds</h3>
-    <p>Item in adipisicin</p>
-    <div class="price">
-        <span class="current-price">$17500</span>
-        <span class="original-price">$18000</span>
-        <button class="cart"><img src="cart.png"></button>
-    </div>
-</div>
-
-
-<div class="product-card">
-    <span class="badge">Best seller</span>
-    <img src="rolex 2.avif" alt="Product" class="product-image" />
-    <h3>Oyster, 36 mm, Everose gold and diamonds</h3>
-    <p>Item in adipisicin</p>
-    <div class="price">
-        <span class="current-price">$17500</span>
-        <span class="original-price">$18000</span>
-        <button class="cart"><img src="cart.png"></button>
-    </div>
-</div>
-
-
-<div class="product-card">
-    <span class="badge">Best seller</span>
-    <img src="rolex 2.avif" alt="Product" class="product-image" />
-    <h3>Oyster, 36 mm, Everose gold and diamonds</h3>
-    <p>Item in adipisicin</p>
-    <div class="price">
-        <span class="current-price">$17500</span>
-        <span class="original-price">$18000</span>
-        <button class="cart"><img src="cart.png"></button>
-    </div>
-</div>
-
-
-<div class="product-card">
-    <span class="badge">Best seller</span>
-    <img src="rolex 2.avif" alt="Product" class="product-image" />
-    <h3>Oyster, 36 mm, Everose gold and diamonds</h3>
-    <p>Item in adipisicin</p>
-    <div class="price">
-        <span class="current-price">$17500</span>
-        <span class="original-price">$18000</span>
-        <button class="cart"><img src="cart.png"></button>
-    </div>
-</div>
-
-
-<div class="product-card">
-    <span class="badge">Best seller</span>
-    <img src="rolex 2.avif" alt="Product" class="product-image" />
-    <h3>Oyster, 36 mm, Everose gold and diamonds</h3>
-    <p>Item in adipisicin</p>
-    <div class="price">
-        <span class="current-price">$17500</span>
-        <span class="original-price">$18000</span>
-        <button class="cart"><img src="cart.png"></button>
-    </div>
-</div>
-
-
-<div class="product-card">
-    <span class="badge">Best seller</span>
-    <img src="rolex 2.avif" alt="Product" class="product-image" />
-    <h3>Oyster, 36 mm, Everose gold and diamonds</h3>
-    <p>Item in adipisicin</p>
-    <div class="price">
-        <span class="current-price">$17500</span>
-        <span class="original-price">$18000</span>
-        <button class="cart"><img src="cart.png"></button>
-    </div>
-</div>
-
-
-<div class="product-card">
-    <span class="badge">Best seller</span>
-    <img src="rolex 2.avif" alt="Product" class="product-image" />
-    <h3>Oyster, 36 mm, Everose gold and diamonds</h3>
-    <p>Item in adipisicin</p>
-    <div class="price">
-        <span class="current-price">$17500</span>
-        <span class="original-price">$18000</span>
-        <button class="cart"><img src="cart.png"></button>
-    </div>
-</div>
-
-
-<div class="product-card">
-    <span class="badge">Best seller</span>
-    <img src="rolex 2.avif" alt="Product" class="product-image" />
-    <h3>Oyster, 36 mm, Everose gold and diamonds</h3>
-    <p>Item in adipisicin</p>
-    <div class="price">
-        <span class="current-price">$17500</span>
-        <span class="original-price">$18000</span>
-        <button class="cart"><img src="cart.png"></button>
-    </div>
-</div>
-
-
-<div class="product-card">
-    <span class="badge">Best seller</span>
-    <img src="rolex 2.avif" alt="Product" class="product-image" />
-    <h3>Oyster, 36 mm, Everose gold and diamonds</h3>
-    <p>Item in adipisicin</p>
-    <div class="price">
-        <span class="current-price">$17500</span>
-        <span class="original-price">$18000</span>
-        <button class="cart"><img src="cart.png"></button>
-    </div>
-</div>
-
-
-<div class="product-card">
-    <span class="badge">Best seller</span>
-    <img src="rolex 2.avif" alt="Product" class="product-image" />
-    <h3>Oyster, 36 mm, Everose gold and diamonds</h3>
-    <p>Item in adipisicin</p>
-    <div class="price">
-        <span class="current-price">$17500</span>
-        <span class="original-price">$18000</span>
-        <button class="cart"><img src="cart.png"></button>
-    </div>
-</div>
-
-
-<div class="product-card">
-    <span class="badge">Best seller</span>
-    <img src="rolex 2.avif" alt="Product" class="product-image" />
-    <h3>Oyster, 36 mm, Everose gold and diamonds</h3>
-    <p>Item in adipisicin</p>
-    <div class="price">
-        <span class="current-price">$17500</span>
-        <span class="original-price">$18000</span>
-        <button class="cart"><img src="cart.png"></button>
-    </div>
-</div>
-
-<div class="product-card">
-    <span class="badge">Best seller</span>
-    <img src="rolex 2.avif" alt="Product" class="product-image" />
-    <h3>Oyster, 36 mm, Everose gold and diamonds</h3>
-    <p>Item in adipisicin</p>
-    <div class="price">
-        <span class="current-price">$17500</span>
-        <span class="original-price">$18000</span>
-        <button class="cart"><img src="cart.png"></button>
-    </div>
-</div>
-
-<div class="product-card">
-    <span class="badge">Best seller</span>
-    <img src="rolex 2.avif" alt="Product" class="product-image" />
-    <h3>Oyster, 36 mm, Everose gold and diamonds</h3>
-    <p>Item in adipisicin</p>
-    <div class="price">
-        <span class="current-price">$17500</span>
-        <span class="original-price">$18000</span>
-        <button class="cart"><img src="cart.png"></button>
-    </div>
-</div>
-
-<div class="product-card">
-    <span class="badge">Best seller</span>
-    <img src="rolex 2.avif" alt="Product" class="product-image" />
-    <h3>Oyster, 36 mm, Everose gold and diamonds</h3>
-    <p>Item in adipisicin</p>
-    <div class="price">
-        <span class="current-price">$17500</span>
-        <span class="original-price">$18000</span>
-        <button class="cart"><img src="cart.png"></button>
-    </div>
-</div>
-
+    <script src="js/model/product.js"></script>
+</body>
+</html>
