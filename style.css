@@ -44,14 +44,22 @@ button:hover{
     transition: .4s;
 }
 
-* {
-    box-sizing: border-box;
-  }
-
-.container{
+.price {
     display: flex;
-    
+    align-items: center;
+    gap: 0.5rem;
 }
+
+.current-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.original-price {
+    color: #999;
+    text-decoration: line-through;
+}
+
 
 
     
