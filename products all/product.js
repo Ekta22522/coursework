@@ -451,7 +451,7 @@ function displayProducts(products) {
                     <div class="price">
                         <span class="current-price">$${product.currentPrice}</span>
                         <span class="original-price">$${product.originalPrice}</span>
-                       <button class="cart"><img src="products image/cart.png"></button>
+                       <button class="cart"><img src="products image/cart.png" alt=""></button>
                     </div>
                 </div>
             `).join('');
