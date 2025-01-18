@@ -125,9 +125,12 @@ a{
     font-size: 0.8rem;
     display: inline-block;
     margin-bottom: 0.5rem;
-    
 }
 
+.price-cart{
+    display: flex;
+    justify-content: space-between;
+}
 
 .price {
     display: flex;
@@ -144,18 +147,23 @@ a{
     color: #999;
     text-decoration: line-through;
 }
+.cart{
+    border: 1px solid lightgray;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
 
-.cart img{
+}
+.cart:hover {
+    background-color: lightgray;
+
+}
+
+    .cart img{
     font-size: 20px;
     width: 20px;
     height: 20px;
-    justify-content: space-between;
-}
-.cart{
-    justify-content: space-between;
-    display: flex;
-    width: 20px;
-    height: 20px;
+
 }
 
 .pagination {

@@ -455,13 +455,15 @@ function displayProducts(products) {
                     <img src="products image/${product.image}" alt="Product" class="product-image" />
                     <h3>${product.name}</h3>
                     <p>${product.description}</p>
-                    <div class="price">
-                        <span class="current-price">$${product.currentPrice}</span>
-                        <span class="original-price">$${product.originalPrice}</span>
-                        <div class= "cart">
-                        <button class="cart"><img src="products image/cart.png" alt=""></button>
+
+                    
+                    <div class="price-cart">
+                        <div class="price">
+                            <span class="current-price">$${product.currentPrice}</span>
+                            <span class="original-price">$${product.originalPrice}</span>
                         </div>
-                       
+                        <button class="cart"><img src="products image/cart.png" alt=""></button>
+
                     </div>
                 </div>
             `).join('');
