@@ -1,5 +1,4 @@
 
-
 const products = [
     {
         id: 1,
@@ -435,14 +434,22 @@ const products = [
 
 ]
 
+// Pagination functionality
+let resultProducts = [
+    ...products
+];
+
+let selectedCategory = "all products"
+let searchText = ""
+let selectedSort = "best match";
+
 
 // Function to display products
 function displayProducts(products) {
-    const shuffledProducts = shuffleArray(products);
     const productsGrid = document.getElementById('products_grid');
 
 
-    productsGrid.innerHTML = shuffledProducts.map(product => `
+    productsGrid.innerHTML = products.map(product => `
                 <div class="product-card">
                     <span class="badge">${product.badge}</span>
                     <img src="products image/${product.image}" alt="Product" class="product-image" />
@@ -472,6 +479,50 @@ function shuffleArray(array) {
     return array;
 }
 
+function applyFilterSearchSort(){
+
+    // Filter products
+    let tempResultProducts;
+
+    // category filter
+    if (selectedCategory === 'all products') {
+        // Show all products if "All Products" is clicked
+        tempResultProducts = [...products];
+    } else {
+        // Filter products by category
+        tempResultProducts = products.filter(product =>
+            product.category.map(cat => cat.toLowerCase()).includes(selectedCategory)
+        );
+    }
+
+    if (searchText !== ""){
+        // Filter products based on search term
+        tempResultProducts = tempResultProducts.filter(product => {
+            const searchTermLower = searchText.toLowerCase();
+            return (
+                product.name.toLowerCase().includes(searchTermLower) ||
+                product.description.toLowerCase().includes(searchTermLower)
+            );
+        });
+
+    }
+
+    tempResultProducts = shuffleArray(tempResultProducts);
+
+    switch(selectedSort.toLowerCase()) {
+        case 'price low to high':
+            tempResultProducts.sort((a, b) => a.currentPrice - b.currentPrice);
+            break;
+        case 'price high to low':
+            tempResultProducts.sort((a, b) => b.currentPrice - a.currentPrice);
+            break;
+        default:
+          break;
+    }
+
+    resultProducts = tempResultProducts;
+}
+
 // Get all filter buttons
 const filterButtons = document.querySelectorAll('.filter-btn');
 
@@ -484,28 +535,35 @@ filterButtons.forEach(button => {
         button.classList.add('active');
 
         // Get category from button text
-        const category = button.textContent.toLowerCase();
+        selectedCategory = button.textContent.toLowerCase();
 
-        // Filter products
-        let filteredProducts;
-        if (category === 'all products') {
-            // Show all products if "All Products" is clicked
-            filteredProducts = [...products];
-        } else {
-            // Filter products by category
-            filteredProducts = products.filter(product =>
-                product.category.map(cat => cat.toLowerCase()).includes(category)
-            );
-        }
+        console.log(selectedCategory);
+
+        applyFilterSearchSort()
 
         // Display filtered products
-        displayProducts(filteredProducts);
+        displayProducts(resultProducts);
     });
 });
 
+
+const searchInput = document.querySelector('.search-bar input');
+searchInput.addEventListener('input', (e) => {
+    searchText = e.target.value;
+    applyFilterSearchSort()
+    displayProducts(resultProducts);
+})
+
+const sortSelect = document.querySelector('.sort-bar select');
+sortSelect.addEventListener('change', (e) => {
+    selectedSort = e.target.value;
+    applyFilterSearchSort()
+    displayProducts(resultProducts);
+})
+
 // Modify your HTML buttons to remove anchor tags
 // Initial display
-displayProducts(products);
+displayProducts(resultProducts);
 
 
 

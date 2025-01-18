@@ -20,7 +20,11 @@ html, body {
 
 .categories {
     display: flex;
+    overflow-x: auto ;
     gap: 1rem;
+}
+.categories::-webkit-scrollbar {
+    display: none;
 }
 
 .search-sort{
@@ -44,7 +48,6 @@ a{
 .filter-btn.active {
     background: maroon;
     color: white;
-    
 }
 
 .products-grid {
@@ -191,12 +194,26 @@ a{
     color: white;
 }
 
-.copyright {
-    display: flex;
-    color: black;
-    font-size: small;
-    font-family: italic;
-    align-items: center;
-    padding: 10px 10px;
-    justify-content: center;
+
+/* Stack layout on medium devices */
+@media (max-width: 768px) {
+
+
+
 }
+
+
+/* Stack layout on ipad and smaller devices */
+@media (max-width: 1024px) {
+    .filters {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+
+    .search-sort {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
