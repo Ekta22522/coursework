@@ -250,6 +250,17 @@ a{
     height: 20px;
 
 }
+.purchase{
+    display: flex;
+   gap: 20px;
+    
+}
+.buy-now{
+    background-color: maroon;
+    color: white;
+    border-radius: 15%;
+}
+
 
 .pagination {
     display: flex;

@@ -462,7 +462,12 @@ function displayProducts(products) {
                             <span class="current-price">$${product.currentPrice}</span>
                             <span class="original-price">$${product.originalPrice}</span>
                         </div>
-                        <button class="cart"><img src="products image/cart.png" alt=""></button>
+                        <div class= "purchase">
+                        <button class="buy-now">Buy now </button>
+                         <button class="cart"><img src="products image/cart.png" alt=""></button>
+                
+                    </div>
+                       
 
                     </div>
                 </div>
