@@ -434,9 +434,6 @@ const products = [
 
 ]
 
-
-const cart= [];
-
 // Pagination functionality
 let resultProducts = [
     ...products
@@ -485,8 +482,6 @@ function addToCart(product) {
     // Update cart counter
     updateCartCounter();
 
-    // Optional: Log cart contents for debugging
-    console.log('Current Cart:', cart);
 }
 
 function showNotification(message) {
@@ -517,26 +512,140 @@ function updateCartCounter() {
     }
 }
 
+function displayCart(cart) {
 
+    //
+    // console.log("cart", cart[0]);
+    //
+    //
+    // console.log("cart quantity", cart[0].quantity);
+    //
 
-// function addToCart(product) {
-//     cart.push({
-//         quantity:1,
-//         product: product,
-//     });
-//
-//     console.log("cart.length: ", cart.length);
-//
-// }
+    const cartTable = document.getElementById('cart_table');
 
-function addToCart(product) {
-    // Convert the string back to an object
-    const productObj = JSON.parse(product.replace(/&quot;/g, '"'));
+    // Check if cart is empty
+    if (!cart || cart.length === 0) {
+        cartTable.innerHTML = `
+            <tr>
+                <td colspan="4" style="text-align: center; padding: 20px;">
+                    Your cart is empty
+                </td>
+            </tr>`;
+        return;
+    }
 
-    // Add the product to the cart
-    console.log("Product added to cart:", productObj);
-    // Your logic to add the product to the cart goes here
+    // Create table header
+    const tableHeader = `
+        <tr>
+            <th><div class="column-heading">Product</div></th>
+            <th><div class="column-heading">Price</div></th>
+            <th><div class="column-heading">Quantity</div></th>
+            <th><div class="column-heading">Total</div></th>
+        </tr>
+    `;
+
+    // Create table body with cart items
+    const tableBody = cart.map(item => `
+        <tr data-product-id="${item.id}">
+            <td>
+                <div class="cart-product-container">
+<!--                    <img src="products image/${item.image}" alt="${item.name}" class="cart-product-image" />-->
+                    <div class="product-description">
+                        <span>${item.name}</span>
+                        <span>${item.description || ''}</span>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="cart-product-price">
+                    <span>$${item.price}</span>
+                </div>
+            </td>
+            <td>
+                <div class="quantity">
+                    <div class="quantity1 decrease" onclick="updateQuantity(${item.id}, -1)">-</div>
+                    <div class="quantity1">${item.quantity}</div>
+                    <div class="quantity1 increase" onclick="updateQuantity(${item.id}, 1)">+</div>
+                </div>
+            </td>
+            <td>
+                <div class="cart-product-total">
+                    $${(item.price * item.quantity)}
+                </div>
+            </td>
+        </tr>
+    `).join('');
+
+    // Update table content
+    cartTable.innerHTML = tableHeader + tableBody;
+
+    // Update total
+    updateCartTotal(cart);
 }
+
+function updateQuantity(productId, change) {
+    // Find the item in the cart
+    const itemIndex = cart.findIndex(item => item.id === productId);
+    if (itemIndex === -1) return;
+
+    // Update quantity
+    const newQuantity = cart[itemIndex].quantity + change;
+
+    // Remove item if quantity becomes 0
+    if (newQuantity <= 0) {
+        cart.splice(itemIndex, 1);
+    } else {
+        cart[itemIndex].quantity = newQuantity;
+    }
+
+    // Refresh display
+    displayCart(cart);
+
+    // Update cart counter
+    updateCartCounter();
+}
+
+function updateCartTotal(cart) {
+    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    const totalElement = document.querySelector('.cart-total');
+    if (totalElement) {
+        totalElement.innerHTML = `<span>Total: $${total.toFixed(2)}</span>`;
+    }
+}
+
+
+// Modal functionality
+function openCartModal() {
+
+    const modal = document.getElementById('cartModal');
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+
+    displayCart(cart);
+}
+
+function closeCartModal() {
+    const modal = document.getElementById('cartModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scrolling
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    const modal = document.getElementById('cartModal');
+    if (event.target == modal) {
+        closeCartModal();
+    }
+}
+
+// Close modal on escape key press
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeCartModal();
+    }
+});
+
+
 
 
 // Function to display products
@@ -567,6 +676,7 @@ function displayProducts(products) {
     addCartButtonListeners();
 
 }
+
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -659,6 +769,12 @@ sortSelect.addEventListener('change', (e) => {
     selectedSort = e.target.value;
     applyFilterSearchSort()
     displayProducts(resultProducts);
+})
+
+
+const cartButton = document.querySelector('.cart-container');
+cartButton.addEventListener('click', (e) => {
+    openCartModal();
 })
 
 // Modify your HTML buttons to remove anchor tags

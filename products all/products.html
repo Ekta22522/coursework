@@ -26,15 +26,35 @@
             <div class="Symbol">
                 <ul>
                     <li>
-                        <a href="cart.html" class="cart-container">
+                        <div class="cart-container">
                             <div class="cart-icon">
                                 <img src="products image/CART.JPG" alt="Shopping Cart">
                                 <span class="cart-counter">0</span>
                             </div>
-                        </a>
-<!--                        <a href="CART">-->
-<!--                            <img src="products image/CART.JPG" alt="cart Symbol" width="40" height="24" class="cart">-->
-<!--                        </a>-->
+                        </div>
+
+                        <!-- Cart Modal -->
+                        <div id="cartModal" class="modal">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Shopping Cart</h2>
+                                    <span class="close" onclick="closeCartModal()">&times;</span>
+                                </div>
+
+                                <div class="cart-table-container">
+                                    <table id="cart_table" class="cart-table">
+                                    </table>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <div class="cart-total">
+                                        <span>Total: $100</span>
+                                    </div>
+                                    <button class="checkout-btn">Proceed to Checkout</button>
+                                </div>
+                            </div>
+                        </div>
+
 
                     </li>
                     <li><a href="profile">
@@ -158,3 +178,6 @@
     <script src="product.js"></script>
 </body>
 </html>
+
+
+
