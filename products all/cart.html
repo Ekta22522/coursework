@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Watch collection</title>
     <link rel="stylesheet" href="products.css">
+
 </head>
 <body>
     <!-- header -->
@@ -14,7 +15,7 @@
             <nav>
                 <div class="homes">
                     <ul>
-                        <li><a href="#">Home</a></li>
+                        <li><a href="home.html">Home</a></li>
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Product</a></li>
                         <li><a href="#">Research</a></li>
@@ -44,61 +45,78 @@
 
 
 
- <!-- for banner -->
-  <div class="image-container">
-    
-  </div>
+<div class="cart-table">
+    <table>
+
+
+    <tr>
+        <th>
+            <div class="column-heading">
+                Product
+            </div>
+        </th>
+        <th>
+            <div class="column-heading">
+             Price
+            </div>
+        </th>
+        <th>
+            <div class="column-heading">
+                Quantity
+            </div>
+        </th>
+        <th>
+            <div class="column-heading">
+                Total
+            </div>
+        </th>
+
+    </tr>
+
+
+    <tr>
+
+        <td>
+            <div class="cart-product-container">
+
+                <img src="products image/women watch/women3.avif" alt="Product" class="cart-product-image" />
+
+                <div class=" product-description">
+                    <span>this is description</span>
+                    <span>this is description</span>
+                </div>
+
+            </div>
+        </td>
+        <td>
+            <div class="cart-product-price">
+                <span>$50.00</span>
+            </div>
+        </td>
+        <td>
+            <div class="quantity">
+                <div class="quantity1">+</div>
+                <div class="quantity1">10</div>
+                <div class="quantity1">-</div>
+            </div>
+
+        </td>
+
+        <td>
+            <div class="cart-product-total">
+                $100
+            </div>
+        </td>
+    </tr>
 
 
 
-<!--filters section-->
-    <div class="filters">
 
-       <div class="categories">
-           <button class="filter-btn active">All Products</button>
-           <button class="filter-btn" id="filter_btn" value="men">Men</button>
-           <button class="filter-btn">Women</button>
-           <button class="filter-btn">Kids</button>
-           <button class="filter-btn">Luxury</button>
-           <button class="filter-btn">Smartwatch</button>
-       </div>
-
-        <!--        search and sort-->
-        <div class="search-sort">
-            <label class="search-bar">
-                <img src="products image/search icon.png" alt="Search Icon" class="search-icon">
-                <input type="search" placeholder="Search product..."  />
-            </label>
-            <label class="sort-bar">
-                <select>
-                    <option>Sort by</option>
-                    <option>price low to high</option>
-                    <option>price high to low</option>
-                    <option>Best Match</option>
-                </select>
-            </label>
-
-        </div>
-
-    </div>
-
-
-<!--product grid-->
-    <div class="products-grid" id="products_grid">
-
-    </div>
+</table>
+</div>
 
 
 
-<!--pagination-->
-    <div class="pagination">
-        <button class="page-btn">←</button>
-        <button class="page-btn active">1</button>
-        <button class="page-btn">2</button>
-        <button class="page-btn">3</button>
-        <button class="page-btn">4</button>
-        <button class="page-btn">→</button>
-    </div>
 
 
 
@@ -143,7 +161,6 @@
             <p><b>Address:</b> Biratnagar-07, Nepal</p>
         </div>
     </footer>
-
 
 
     <script src="product.js"></script>

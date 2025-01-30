@@ -434,6 +434,9 @@ const products = [
 
 ]
 
+
+const cart= [];
+
 // Pagination functionality
 let resultProducts = [
     ...products
@@ -444,19 +447,40 @@ let searchText = ""
 let selectedSort = "best match";
 
 
+
+// function addToCart(product) {
+//     cart.push({
+//         quantity:1,
+//         product: product,
+//     });
+//
+//     console.log("cart.length: ", cart.length);
+//
+// }
+
+function addToCart(product) {
+    // Convert the string back to an object
+    const productObj = JSON.parse(product.replace(/&quot;/g, '"'));
+
+    // Add the product to the cart
+    console.log("Product added to cart:", productObj);
+    // Your logic to add the product to the cart goes here
+}
+
+
 // Function to display products
 function displayProducts(products) {
     const productsGrid = document.getElementById('products_grid');
 
 
-    productsGrid.innerHTML = products.map(product => `
+    productsGrid.innerHTML = products.map( product => `
+
                 <div class="product-card">
                     <span class="badge">${product.badge}</span>
                     <img src="products image/${product.image}" alt="Product" class="product-image" />
                     <h3>${product.name}</h3>
                     <p>${product.description}</p>
 
-                    
                     <div class="price-cart">
                         <div class="price">
                             <span class="current-price">$${product.currentPrice}</span>
@@ -464,7 +488,7 @@ function displayProducts(products) {
                         </div>
                         <div class= "purchase">
                         <button class="buy-now">Buy now </button>
-                         <button class="cart"><img src="products image/cart.png" alt=""></button>
+                        <button onclick="addToCart(${product})" class="cart"><img src="products image/cart.png" alt=""></button>
                 
                     </div>
                        
