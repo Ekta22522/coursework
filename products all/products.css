@@ -202,6 +202,8 @@ a{
     height: 200px;
     object-fit: contain;
     margin-bottom: 1rem;
+
+
 }
 
 .badge {
@@ -258,6 +260,97 @@ a{
     width: 20px;
     height: 20px;
 
+}
+.purchase{
+    display: flex;
+   gap: 20px;
+    
+}
+.buy-now{
+    background-color: maroon;
+    color: white;
+    border-radius: 15%;
+
+}
+
+.buy-now:hover{
+    background-color: lightgrey;
+
+}
+
+
+/*add to cart*/
+.table {
+border-collapse:collapse ;
+
+
+}
+.cart-table{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.cart-product-price{
+    display: flex;
+    justify-content: center;
+}
+.cart-product-total{
+    display: flex;
+    justify-content: center;
+}
+
+td, th {
+    /*border:1px solid lightgray;*/
+    text-align: left;
+    padding: 8px;
+    width:800px;
+
+}
+th{
+    background-color: maroon;
+    color: white;
+    margin: 20px;
+}
+
+
+.quantity1 {
+    border: 1px solid lightgray;
+    background-color: white;
+    height:25px;
+    width:30px;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+
+
+
+
+}
+.quantity{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.cart-product-container {
+    display: flex;
+    gap: 6px;
+}
+
+.cart-product-image {
+    height:100px;
+    width:100px;
+    object-fit: contain;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+}
+
+.product-description{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex-grow: 1;
+    padding: 10px;
 }
 
 .pagination {

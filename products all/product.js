@@ -434,6 +434,9 @@ const products = [
 
 ]
 
+
+const cart= [];
+
 // Pagination functionality
 let resultProducts = [
     ...products
@@ -515,6 +518,27 @@ function updateCartCounter() {
 }
 
 
+
+// function addToCart(product) {
+//     cart.push({
+//         quantity:1,
+//         product: product,
+//     });
+//
+//     console.log("cart.length: ", cart.length);
+//
+// }
+
+function addToCart(product) {
+    // Convert the string back to an object
+    const productObj = JSON.parse(product.replace(/&quot;/g, '"'));
+
+    // Add the product to the cart
+    console.log("Product added to cart:", productObj);
+    // Your logic to add the product to the cart goes here
+}
+
+
 // Function to display products
 function displayProducts(products) {
     const productsGrid = document.getElementById('products_grid');
@@ -526,24 +550,16 @@ function displayProducts(products) {
                     <h3>${product.name}</h3>
                     <p>${product.description}</p>
 
-                    
                     <div class="price-cart">
                         <div class="price">
                             <span class="current-price">$${product.currentPrice}</span>
                             <span class="original-price">$${product.originalPrice}</span>
                         </div>
-                        
-                        
-<!--                        <button class="cart"><img src="products image/cart.png" alt=""></button>-->
-                        
                         <button class="cart-btn" 
                             data-product='${JSON.stringify(product)}'>
                             <img src="products image/cart.png" alt="Add to cart">
                         </button>
-                        
-                         <button class="cart">Buy now</button>
-                       
-
+                         <button class="cart">Buy now</button>                       
                     </div>
                 </div>
             `).join('');
