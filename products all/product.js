@@ -443,11 +443,81 @@ let selectedCategory = "all products"
 let searchText = ""
 let selectedSort = "best match";
 
+const cart = [];
+
+function addCartButtonListeners() {
+    const cartButtons = document.querySelectorAll('.cart-btn');
+    cartButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+
+
+            const productData = JSON.parse(this.getAttribute('data-product'));
+
+            addToCart(productData);
+
+            console.log(productData);
+
+        });
+    });
+}
+
+
+
+function addToCart(product) {
+    // Check if product is already in cart
+    const existingItem = cart.find(item => item.id === product.id);
+
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({
+            ...product,  // Spread all product properties
+            quantity: 1
+        });
+    }
+
+    // Show success message
+    showNotification(`Added ${product.name} to cart`);
+
+    // Update cart counter
+    updateCartCounter();
+
+    // Optional: Log cart contents for debugging
+    console.log('Current Cart:', cart);
+}
+
+function showNotification(message) {
+    const notification = document.createElement('div');
+    notification.className = 'notification';
+    notification.textContent = message;
+
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+        notification.remove();
+    }, 2000);
+}
+
+
+function updateCartCounter() {
+    const cartCounter = document.querySelector('.cart-counter');
+    if (cartCounter) {
+        cartCounter.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+        // Add animation class
+        cartCounter.classList.add('update');
+
+        // Remove animation class after animation completes
+        setTimeout(() => {
+            cartCounter.classList.remove('update');
+        }, 300);
+    }
+}
+
 
 // Function to display products
 function displayProducts(products) {
     const productsGrid = document.getElementById('products_grid');
-
 
     productsGrid.innerHTML = products.map(product => `
                 <div class="product-card">
@@ -462,11 +532,23 @@ function displayProducts(products) {
                             <span class="current-price">$${product.currentPrice}</span>
                             <span class="original-price">$${product.originalPrice}</span>
                         </div>
-                        <button class="cart"><img src="products image/cart.png" alt=""></button>
+                        
+                        
+<!--                        <button class="cart"><img src="products image/cart.png" alt=""></button>-->
+                        
+                        <button class="cart-btn" 
+                            data-product='${JSON.stringify(product)}'>
+                            <img src="products image/cart.png" alt="Add to cart">
+                        </button>
+                        
+                         <button class="cart">Buy now</button>
+                       
 
                     </div>
                 </div>
             `).join('');
+
+    addCartButtonListeners();
 
 }
 
@@ -566,6 +648,7 @@ sortSelect.addEventListener('change', (e) => {
 // Modify your HTML buttons to remove anchor tags
 // Initial display
 displayProducts(resultProducts);
+
 
 
 
